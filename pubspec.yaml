@@ -48,6 +48,7 @@ flutter:
     - asset: assets/Fonts/Chango/Chango-Regular.ttf
   assets:
   - assets/images/
+  - assets/images/alphabets/
  
 
     
