@@ -135,13 +135,14 @@ class CategoryScreenState extends State<CategoryScreen> {
                     (BuildContext context, int index) {
                       return GestureDetector(
                           onTap: () {
+                        print("$index===${colors[index]['name']}=");
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => ViewLearnScreen(
                                         id: '$index',
                                         name:
-                                            '${categoryname[index]['name']}')));
+                                            '${colors[index]['name']}')));
                             // Navigator.of(context).pushNamed("/viewlearn");
                           },
                           child: Container(

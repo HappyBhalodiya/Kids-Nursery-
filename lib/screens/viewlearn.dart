@@ -298,15 +298,15 @@ class ViewLearnScreenState extends State<ViewLearnScreen> {
   ];
   List colors = [
     {'id': 1, 'color': Colors.black, 'name': 'Black'},
-    {'id': 2, 'color': Colors.white , 'name': 'White'},
-    {'id': 3, 'color': Colors.blue , 'name': 'Blue'},
-    {'id': 4, 'color': Colors.green , 'name': 'Green'},
-    {'id': 5, 'color': Colors.yellow , 'name': 'Yellow'},
-    {'id': 6, 'color': Colors.orange , 'name': 'Orange'},
-    {'id': 7, 'color': Colors.red , 'name': 'Red'},
-    {'id': 8, 'color': Colors.grey , 'name': 'Grey'},
-    {'id': 9, 'color': Colors.brown , 'name': 'Brown'},
-    {'id': 10, 'color': Colors.purple , 'name': 'Purple'},
+    {'id': 2, 'color': Colors.white, 'name': 'White'},
+    {'id': 3, 'color': Colors.blue, 'name': 'Blue'},
+    {'id': 4, 'color': Colors.green, 'name': 'Green'},
+    {'id': 5, 'color': Colors.yellow, 'name': 'Yellow'},
+    {'id': 6, 'color': Colors.orange, 'name': 'Orange'},
+    {'id': 7, 'color': Colors.red, 'name': 'Red'},
+    {'id': 8, 'color': Colors.grey, 'name': 'Grey'},
+    {'id': 9, 'color': Colors.brown, 'name': 'Brown'},
+    {'id': 10, 'color': Colors.purple, 'name': 'Purple'},
   ];
 
   @override
@@ -611,8 +611,7 @@ class ViewLearnScreenState extends State<ViewLearnScreen> {
                                 ));
                               },
                               itemCount: numbers.length)
-                          : 
-                          this.widget.name == "COLORS"
+                          : this.widget.name == "COLORS"
                               ? Swiper(
                                   layout: SwiperLayout.CUSTOM,
                                   customLayoutOption:
@@ -649,48 +648,56 @@ class ViewLearnScreenState extends State<ViewLearnScreen> {
                                                 child: Column(
                                                   children: <Widget>[
                                                     Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
                                                       children: <Widget>[
-                                                        // Container(
-                                                        //   alignment:
-                                                        //       Alignment.center,
-                                                        //   decoration:
-                                                        //       new BoxDecoration(
-                                                        //     color: colors[index]
-                                                        //         ['color'],
-                                                        //     shape:
-                                                        //         BoxShape.circle,
-                                                        //     border:
-                                                        //         new Border.all(
-                                                        //       color:
-                                                        //           Colors.white,
-                                                        //       width: 2.5,
-                                                        //     ),
-                                                        //   ),
-                                                        // )
+                                                        Container(
+                                                          alignment:
+                                                              Alignment.center,
+                                                          width: 100,
+                                                          height: 100,
+                                                          decoration:
+                                                              new BoxDecoration(
+                                                            color: colors[index]
+                                                                ['color'],
+                                                            shape:
+                                                                BoxShape.circle,
+                                                            border:
+                                                                new Border.all(
+                                                              color:
+                                                                  Colors.white,
+                                                              width: 2.5,
+                                                            ),
+                                                          ),
+                                                        )
                                                       ],
                                                     ),
-                                                    // Row(
-                                                    //   mainAxisAlignment:
-                                                    //       MainAxisAlignment
-                                                    //           .center,
-                                                    //   crossAxisAlignment:
-                                                    //       CrossAxisAlignment
-                                                    //           .center,
-                                                    //   children: <Widget>[
-                                                    //     Text(
-                                                    //       "${colors[index]['name']}",
-                                                    //       style: TextStyle(
-                                                    //           fontFamily:
-                                                    //               'Chango-Regular',
-                                                    //           fontSize: 19,
-                                                    //           fontWeight:
-                                                    //               FontWeight
-                                                    //                   .bold,
-                                                    //           color:
-                                                    //               Colors.pink),
-                                                    //     )
-                                                    //   ],
-                                                    // ),
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .center,
+                                                      children: <Widget>[
+                                                        Text(
+                                                          "${colors[index]['name']}",
+                                                          style: TextStyle(
+                                                              fontFamily:
+                                                                  'Chango-Regular',
+                                                              fontSize: 19,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              color:
+                                                                  Colors.pink),
+                                                        )
+                                                      ],
+                                                    ),
                                                   ],
                                                 )),
                                           ],
@@ -713,8 +720,8 @@ class ViewLearnScreenState extends State<ViewLearnScreen> {
                                                   children: <Widget>[
                                                     FlatButton(
                                                       onPressed: () => {
-                                                        // Tts.speak(colors[index]
-                                                        //     ['name'])
+                                                        Tts.speak(colors[index]
+                                                            ['name'])
                                                       },
                                                       child: Row(
                                                         children: <Widget>[

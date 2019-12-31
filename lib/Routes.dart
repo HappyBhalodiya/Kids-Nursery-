@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:nursery_rhymes/screens/dashboard.dart';
 import 'package:nursery_rhymes/screens/category.dart';
 import 'package:nursery_rhymes/screens/viewlearn.dart';
+import 'package:nursery_rhymes/screens/play_learn.dart';
+import 'package:nursery_rhymes/screens/listen_learn.dart';
+
 
 
 class Routes {
@@ -9,6 +12,9 @@ class Routes {
     "/dashboard": (BuildContext context) => new DashboardScreen(),
     "/alphabets": (BuildContext context) => new CategoryScreen(),
     "/viewlearn": (BuildContext context) => new ViewLearnScreen(),
+    "/play_learn": (BuildContext context) => new Play_LearnScreen(),
+    "/listen_learn": (BuildContext context) => new Listen_learnScreen(),
+
 
  
   };

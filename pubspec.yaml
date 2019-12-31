@@ -26,6 +26,7 @@ dependencies:
   flare_flutter: ^1.8.3
   tts: ^1.0.2
   flutter_swiper: ^1.1.6
+  audioplayers: ^0.13.5
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +50,7 @@ flutter:
   assets:
   - assets/images/
   - assets/images/alphabets/
+  - assets/audio/
  
 
     
