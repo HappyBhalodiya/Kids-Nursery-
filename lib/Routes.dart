@@ -23,7 +23,7 @@ class Routes {
   Routes() {
     runApp(new MaterialApp(
       title: "Flutter Flat App",
-      home: TabsScreen(),
+      home: DashboardScreen(),
       theme: ThemeData(
         primaryColor: Color(0xffFFFFFF),
       ),

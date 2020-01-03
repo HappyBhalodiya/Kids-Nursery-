@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nursery_rhymes/screens/audioplayer.dart';
+import 'package:nursery_rhymes/json.dart' as jsonData;
 
 void main() {
   runApp(new AudioScreen());
@@ -14,68 +15,6 @@ class AudioScreen extends StatefulWidget {
 }
 
 class AudioScreenState extends State<AudioScreen> {
-  List audio = [
-    {
-      'id': 1,
-      'image': 'assets/images/audio_images/duck.jpeg',
-      'name': 'little ducks'
-    },
-    {
-      'id': 2,
-      'image': 'assets/images/audio_images/sheep.jpg',
-      'name': 'Baa Baa'
-    },
-    {
-      'id': 3,
-      'image': 'assets/images/audio_images/shark.png',
-      'name': 'Baby shark'
-    },
-    {
-      'id': 4,
-      'image': 'assets/images/audio_images/headshoulders.png',
-      'name': 'Head shoulders'
-    },
-    {
-      'id': 5,
-      'image': 'assets/images/audio_images/hickorydickory.jpg',
-      'name': 'Hickory dickory'
-    },
-    {
-      'id': 6,
-      'image': 'assets/images/audio_images/humptydumpty.jpg',
-      'name': 'Humpty dumpty'
-    },
-    {
-      'id': 7,
-      'image': 'assets/images/audio_images/Incy-wincy.jpeg',
-      'name': 'Iucy wincy'
-    },
-    {
-      'id': 8,
-      'image': 'assets/images/audio_images/little-lamp.jpg',
-      'name': 'Little lamp'
-    },
-    {
-      'id': 9,
-      'image': 'assets/images/audio_images/mulberrybush.jpg',
-      'name': 'Mulberry bush'
-    },
-    {
-      'id': 10,
-      'image': 'assets/images/audio_images/old-macdonald.png',
-      'name': 'Old macdonald'
-    },
-    {
-      'id': 11,
-      'image': 'assets/images/audio_images/twinkle-twinkle.jpg',
-      'name': 'Twinkle twinkle'
-    },
-    {
-      'id': 12,
-      'image': 'assets/images/audio_images/wheels.jpeg',
-      'name': 'Wheels on the bus'
-    }
-  ];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -108,7 +47,7 @@ class AudioScreenState extends State<AudioScreen> {
                           MaterialPageRoute(
                               builder: (context) => AudioPlayerScreen(
                                   id: '$index',
-                                  name: '${audio[index]['name']}')));
+                                  name: '${jsonData.audio[index]['name']}')));
                     },
                     child: Container(
                         alignment: Alignment.center,
@@ -121,7 +60,7 @@ class AudioScreenState extends State<AudioScreen> {
                                   width: 180,
                                   // color: Colors.red,
                                   child: Image.asset(
-                                    audio[index]['image'],
+                                    jsonData.audio[index]['image'],
                                     fit: BoxFit.fill,
                                   ),
                                 )
@@ -135,7 +74,7 @@ class AudioScreenState extends State<AudioScreen> {
                                     color: Colors.teal,
                                     onPressed: () {},
                                     child: Text(
-                                      "${audio[index]['name']}",
+                                      "${jsonData.audio[index]['name']}",
                                       style: TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,
@@ -148,7 +87,7 @@ class AudioScreenState extends State<AudioScreen> {
                           ],
                         )));
               },
-              childCount: audio.length,
+              childCount: jsonData.audio.length,
             ),
           )
         ],

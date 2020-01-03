@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nursery_rhymes/screens/category.dart';
+import 'package:nursery_rhymes/json.dart' as jsonData;
 void main() {
   runApp(new Play_LearnScreen());
 }
@@ -10,27 +11,7 @@ class Play_LearnScreen extends StatefulWidget {
 }
 
 class Play_LearnScreenState extends State<Play_LearnScreen> {
-  List category = [
-    {
-      'id': 1,
-      'name': 'ALPHABETS',
-      'image': 'assets/images/abc.png',
-      'color': Colors.pink
-    },
-    {
-      'id': 2,
-      'name': 'NUMBERS',
-      'image': 'assets/images/123.png',
-      'color': Colors.deepPurple
-    },
-    {
-      'id': 3,
-      'name': 'COLORS',
-      'image': 'assets/images/color.png',
-      'color': Colors.deepOrange
-    },
-    
-  ];
+ 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -48,7 +29,7 @@ class Play_LearnScreenState extends State<Play_LearnScreen> {
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: category.map((data) {
+              children: jsonData.category.map((data) {
                 return GestureDetector(
                     onTap: () {
                   
