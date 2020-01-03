@@ -3,9 +3,10 @@ import 'package:nursery_rhymes/screens/dashboard.dart';
 import 'package:nursery_rhymes/screens/category.dart';
 import 'package:nursery_rhymes/screens/viewlearn.dart';
 import 'package:nursery_rhymes/screens/play_learn.dart';
-import 'package:nursery_rhymes/screens/listen_learn.dart';
-
-
+import 'package:nursery_rhymes/screens/audio.dart';
+import 'package:nursery_rhymes/screens/Tabs.dart';
+import 'package:nursery_rhymes/screens/habits.dart';
+import 'package:nursery_rhymes/screens/audioplayer.dart';
 
 class Routes {
   var routes = <String, WidgetBuilder>{
@@ -13,16 +14,16 @@ class Routes {
     "/alphabets": (BuildContext context) => new CategoryScreen(),
     "/viewlearn": (BuildContext context) => new ViewLearnScreen(),
     "/play_learn": (BuildContext context) => new Play_LearnScreen(),
-    "/listen_learn": (BuildContext context) => new Listen_learnScreen(),
-
-
- 
+    "/audio": (BuildContext context) => new AudioScreen(),
+    "/Tabs": (BuildContext context) => new TabsScreen(),
+    "/habits": (BuildContext context) => new HabitsScreen(),
+    "/audioplayer": (BuildContext context) => new AudioPlayerScreen(),
   };
 
   Routes() {
     runApp(new MaterialApp(
       title: "Flutter Flat App",
-      home: DashboardScreen(),
+      home: TabsScreen(),
       theme: ThemeData(
         primaryColor: Color(0xffFFFFFF),
       ),
@@ -30,3 +31,5 @@ class Routes {
     ));
   }
 }
+
+

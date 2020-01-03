@@ -40,7 +40,7 @@ class DashboardScreenState extends State<DashboardScreen> {
               RaisedButton(
                 color: Colors.grey,
                 onPressed: () {
-                  Navigator.of(context).pushNamed("/listen_learn");
+                  Navigator.of(context).pushNamed("/Tabs");
                 },
                 child: Text("Listen & Learn"),
               )

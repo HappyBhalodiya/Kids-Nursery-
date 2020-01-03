@@ -43,6 +43,8 @@ class CategoryScreenState extends State<CategoryScreen> {
         {'name': "ALPHABETS", 'data': 'D'},
         {'name': "ALPHABETS", 'data': 'E'},
         {'name': "ALPHABETS", 'data': 'F'},
+        {'name': "ALPHABETS", 'data': 'G'},
+        {'name': "ALPHABETS", 'data': 'H'},
         {'name': "ALPHABETS", 'data': 'I'},
         {'name': "ALPHABETS", 'data': 'J'},
         {'name': "ALPHABETS", 'data': 'K'},
@@ -143,7 +145,7 @@ class CategoryScreenState extends State<CategoryScreen> {
                                         id: '$index',
                                         name:
                                             '${colors[index]['name']}')));
-                            // Navigator.of(context).pushNamed("/viewlearn");
+                            
                           },
                           child: Container(
                             alignment: Alignment.center,
