@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nursery_rhymes/screens/category.dart';
 
 void main() {
   runApp(new DashboardScreen());
@@ -18,7 +17,7 @@ class DashboardScreenState extends State<DashboardScreen> {
         body: Stack(children: <Widget>[
       Center(
         child: new Image.asset(
-          'assets/images/b.png',
+          'assets/images/dashboard.jpg',
           width: size.width,
           height: size.height,
           fit: BoxFit.fill,
@@ -30,20 +29,54 @@ class DashboardScreenState extends State<DashboardScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              RaisedButton(
-                color: Colors.grey,
-                onPressed: () {
-                  Navigator.of(context).pushNamed("/play_learn");
-                },
-                child: Text("Play & Learn"),
-              ),
-              RaisedButton(
-                color: Colors.grey,
-                onPressed: () {
-                  Navigator.of(context).pushNamed("/Tabs");
-                },
-                child: Text("Listen & Learn"),
-              )
+              Container(
+                  width: 350,
+                  height: 50,
+                  margin: EdgeInsets.fromLTRB(50, 0, 50, 10),
+                  child: OutlineButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed("/play_learn");
+                      },
+                      borderSide: BorderSide(
+                        color: Colors.black, //Color of the border
+                        style: BorderStyle.solid, //Style of the border
+                        width: 3.0, //width of the border
+                      ),
+                      child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "Play & Learn",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Chango-Regular',
+                                fontWeight: FontWeight.bold,
+                                color: Colors.pink,
+                                fontSize: 25),
+              )))),
+              Container(
+                  width: 350,
+                  height: 50,
+                  margin: EdgeInsets.fromLTRB(50, 0, 50, 10),
+                  child: OutlineButton(
+                      onPressed: () {
+                        Navigator.of(context).pushNamed("/Tabs");
+                      },
+                      borderSide: BorderSide(
+                        color: Colors.black, //Color of the border
+                        style: BorderStyle.solid, //Style of the border
+                        width: 3.0, //width of the border
+                      ),
+                      child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "Listen & Learn",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Chango-Regular',
+                                fontWeight: FontWeight.bold,
+                                color: Colors.pink,
+                                fontSize: 25),
+                          ))))
             ],
           ))
     ]));

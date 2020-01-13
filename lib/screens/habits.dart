@@ -43,6 +43,7 @@ class HabitsScreenState extends State<HabitsScreen> {
             
         ],
       )
-    ])));
+    ]))
+    );
   }
 }

@@ -39,7 +39,7 @@ class AudioPlayerScreenState extends State<AudioPlayerScreen>
       ..length = 10
       ..fillRange(0, 10, new SwiperController());
     super.initState();
-    initPlayer();
+    
     _animationController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 300));
   }
@@ -54,7 +54,8 @@ class AudioPlayerScreenState extends State<AudioPlayerScreen>
     _animationController.dispose();
   }
 
-  void initPlayer() {
+  void initPlayer(index) {
+    print("call init player");
     advancedPlayer = new AudioPlayer();
     audioCache = new AudioCache(fixedPlayer: advancedPlayer);
 
@@ -75,7 +76,7 @@ class AudioPlayerScreenState extends State<AudioPlayerScreen>
   Widget slider() {
     return Slider(
         value: _position.inSeconds.toDouble(),
-        min: 0.0,
+        min: 00.00,
         max: _duration.inSeconds.toDouble(),
         onChanged: (double value) {
           setState(() {
@@ -96,7 +97,6 @@ class AudioPlayerScreenState extends State<AudioPlayerScreen>
   Widget build(BuildContext context) {
     var srartDuration =
         '${audio == null ? 00.00 : audio.split('.')[0].split(':')[1] + ':' + audio.split('.')[0].split(':')[2]}';
-
     var endDuration =
         '${endduration == null ? 00.00 : endduration.split('.')[0].split(':')[1] + ':' + endduration.split('.')[0].split(':')[2]}';
     return Scaffold(
@@ -112,7 +112,7 @@ class AudioPlayerScreenState extends State<AudioPlayerScreen>
                   colorFilter: new ColorFilter.mode(
                       Colors.black.withOpacity(0.5), BlendMode.dstATop),
                   image: new AssetImage(
-                    'assets/images/audio_images/bg.jpg',
+                    'assets/images/audio_images/bg1.jpg',
                   ),
                 ),
               )),
@@ -169,6 +169,7 @@ class AudioPlayerScreenState extends State<AudioPlayerScreen>
                                           progress: _animationController,
                                         ),
                                         onPressed: () => {
+                                          initPlayer(index),
                                           setState(() {
                                             isPlaying = !isPlaying;
                                             if (isPlaying) {

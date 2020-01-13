@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:nursery_rhymes/screens/category.dart';
 import 'package:nursery_rhymes/json.dart' as jsonData;
+import 'package:giffy_dialog/giffy_dialog.dart';
+import 'package:nursery_rhymes/screens/maths.dart';
+
 void main() {
-  runApp(new Play_LearnScreen());
+  runApp(new PlayLearnScreen());
 }
 
-class Play_LearnScreen extends StatefulWidget {
+class PlayLearnScreen extends StatefulWidget {
   @override
-  Play_LearnScreenState createState() => Play_LearnScreenState();
+  PlayLearnScreenState createState() => PlayLearnScreenState();
 }
 
-class Play_LearnScreenState extends State<Play_LearnScreen> {
- 
+class PlayLearnScreenState extends State<PlayLearnScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -19,7 +21,7 @@ class Play_LearnScreenState extends State<Play_LearnScreen> {
         body: Stack(children: <Widget>[
       Center(
         child: new Image.asset(
-          'assets/images/b.png',
+          'assets/images/playlearn.jpg',
           width: size.width,
           height: size.height,
           fit: BoxFit.fill,
@@ -30,28 +32,25 @@ class Play_LearnScreenState extends State<Play_LearnScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: jsonData.category.map((data) {
-                return GestureDetector(
-                    onTap: () {
-                  
-                              Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => CategoryScreen(
-                                                  id:
-                                                      '${data['id']}',
-                                                  name:
-                                                      '${data['name']}'),
-                                            ));
-                    },
-                    child: Container(
-                        width: 310,
-                        height: 50,
-                        margin: EdgeInsets.fromLTRB(50, 0, 50, 10),
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            image: DecorationImage(
-                                image: AssetImage("assets/images/a.jpg"),
-                                fit: BoxFit.cover)),
+                return Container(
+                    width: 350,
+                    height: 50,
+                    margin: EdgeInsets.fromLTRB(50, 0, 50, 10),
+                    child: OutlineButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CategoryScreen(
+                                    id: '${data['id']}',
+                                    name: '${data['name']}'),
+                              ));
+                        },
+                        borderSide: BorderSide(
+                          color: Colors.deepPurple, //Color of the border
+                          style: BorderStyle.solid, //Style of the border
+                          width: 3.0, //width of the border
+                        ),
                         child: Row(
                           children: <Widget>[
                             Align(
@@ -61,7 +60,7 @@ class Play_LearnScreenState extends State<Play_LearnScreen> {
                             Align(
                                 alignment: Alignment.center,
                                 child: Text(
-                                  " ${data['name']}",
+                                  "${data['name']}",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontFamily: 'Chango-Regular',
@@ -72,6 +71,56 @@ class Play_LearnScreenState extends State<Play_LearnScreen> {
                           ],
                         )));
               }).toList())),
+      Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+             Container(
+                    width: 350,
+                    height: 50,
+                    margin: EdgeInsets.fromLTRB(50, 240, 50, 10),
+                    child: OutlineButton(
+                        onPressed: () {
+                         Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MathsScreen()));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //       builder: (context) => CategoryScreen(
+                          //           id: '${data['id']}',
+                          //           name: '${data['name']}'),
+                          //     ));
+                        },
+                        borderSide: BorderSide(
+                          color: Colors.deepPurple, //Color of the border
+                          style: BorderStyle.solid, //Style of the border
+                          width: 3.0, //width of the border
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Align(
+                                alignment: Alignment.center,
+                                child: Image.asset('assets/images/maths.png',
+                                    width: 45, height: 35)),
+                            Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "MATHS",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontFamily: 'Chango-Regular',
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.teal,
+                                      fontSize: 25),
+                                ))
+                          ],
+                        )))
+          ],
+        ),
+      )
     ]));
   }
 }

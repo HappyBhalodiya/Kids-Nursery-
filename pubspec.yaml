@@ -28,6 +28,10 @@ dependencies:
   flutter_swiper: ^1.1.6
   audioplayers: ^0.13.5
   flutter_html: ^0.11.1
+  audioplayer2: ^0.5.2
+  giffy_dialog: ^1.6.1
+
+
   
 
 dev_dependencies:

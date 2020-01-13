@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:tts/tts.dart';
 import 'package:nursery_rhymes/json.dart' as jsonData;
-void main() {
-  runApp(new ViewLearnScreen());
-}
+
 
 class ViewLearnScreen extends StatefulWidget {
   final id;

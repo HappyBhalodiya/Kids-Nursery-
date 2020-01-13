@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nursery_rhymes/screens/viewlearn.dart';
 
-void main() {
-  runApp(new CategoryScreen());
-}
 
 class CategoryScreen extends StatefulWidget {
   final id;
