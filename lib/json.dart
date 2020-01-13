@@ -313,6 +313,29 @@ List category = [
   },
  
 ];
+List mathsCategory = [
+  {
+    'id': 1,
+    'name': 'ADDITION',
+    'color': Colors.pink
+  },
+  {
+    'id': 2,
+    'name': 'SUBTRACTION',
+    'color': Colors.green
+  },
+  {
+    'id': 3,
+    'name': 'MULTIPLICATION',
+    'color': Colors.deepOrange
+  },
+  {
+    'id': 4,
+    'name': 'DIVISION',
+    'color': Colors.teal
+  },
+ 
+];
 List audio = [
   {
     'id': 1,

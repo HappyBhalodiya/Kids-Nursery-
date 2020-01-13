@@ -3,6 +3,7 @@ import 'package:nursery_rhymes/screens/category.dart';
 import 'package:nursery_rhymes/json.dart' as jsonData;
 import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:nursery_rhymes/screens/maths.dart';
+import 'package:nursery_rhymes/screens/mathsCategory.dart';
 
 void main() {
   runApp(new PlayLearnScreen());
@@ -85,14 +86,8 @@ class PlayLearnScreenState extends State<PlayLearnScreen> {
                          Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => MathsScreen()));
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //       builder: (context) => CategoryScreen(
-                          //           id: '${data['id']}',
-                          //           name: '${data['name']}'),
-                          //     ));
+                                builder: (context) => MathsCategoryScreen()));
+                         
                         },
                         borderSide: BorderSide(
                           color: Colors.deepPurple, //Color of the border
